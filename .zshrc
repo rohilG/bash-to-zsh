@@ -60,7 +60,7 @@ ZSH_DISABLE_COMPFIX=true
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/rvgupta/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,11 +69,14 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 source ~/.bash_profile
 
+# TODO: Delete
+__________________________________________________________________________________________________________________________________
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/rvgupta/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rvgupta/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/rvgupta/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rvgupta/google-cloud-sdk/completion.zsh.inc'; fi
+__________________________________________________________________________________________________________________________________
 
 # Sources fuzzy finder for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -82,7 +85,7 @@ export FZF_DEFAULT_OPTS='--height 40% --inline-info --reverse'
 # Helps with error correction on slightly misspelled commands
 eval $(thefuck --alias)
 
-export NVM_DIR="/Users/rvgupta/.nvm"
+export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export GOPATH=$HOME/go
