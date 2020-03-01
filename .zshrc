@@ -70,13 +70,13 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 source ~/.bash_profile
 
 # TODO: Delete
-__________________________________________________________________________________________________________________________________
+#__________________________________________________________________________________________________________________________________
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/rvgupta/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rvgupta/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/rvgupta/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rvgupta/google-cloud-sdk/completion.zsh.inc'; fi
-__________________________________________________________________________________________________________________________________
+#__________________________________________________________________________________________________________________________________
 
 # Sources fuzzy finder for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
