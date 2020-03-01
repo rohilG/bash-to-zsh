@@ -1,2 +1,2 @@
-# bash-to-zsh
-Integrating to zsh.
+# Dotfiles
+Integrating to zsh and using tmux
