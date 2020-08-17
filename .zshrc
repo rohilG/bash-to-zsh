@@ -1,3 +1,4 @@
+#######################################################################################
 POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -54,6 +55,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting # This should be the last one
 )
+#######################################################################################
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -67,15 +69,6 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 source ~/.bash_profile
 
-# TODO: Delete
-#__________________________________________________________________________________________________________________________________
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/rvgupta/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rvgupta/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/rvgupta/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rvgupta/google-cloud-sdk/completion.zsh.inc'; fi
-#__________________________________________________________________________________________________________________________________
-
 # Sources fuzzy finder for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --inline-info --reverse'
@@ -88,4 +81,3 @@ export NVM_DIR=$HOME/.nvm
 
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
-export GOPRIVATE=github.com/kouzoh
