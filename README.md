@@ -1,10 +1,6 @@
 # Dotfiles
 Integrating to zsh and using tmux
 
-## .vimrc
-Run the following
-
-
 1. Place all files individually under `~/.` For example, your path for `.bashrc` should be `~/.bashrc`
 2. I use iterm2: ```brew cask install iterm2```
 3. Install zshrc: ```brew install zsh```
