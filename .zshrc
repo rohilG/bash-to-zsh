@@ -50,14 +50,12 @@ POWERLEVEL9K_SHORTEN_STRATEGY="none"
 POWERLEVEL9K_STATUS_ERROR_BACKGROUND="clear"
 
 plugins=(
-  zsh-syntax-highlighting
   git
+  zsh-autosuggestions
+  zsh-syntax-highlighting # This should be the last one
 )
 
 ZSH_DISABLE_COMPFIX=true
-
-#Autosuggestions for Bash
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
