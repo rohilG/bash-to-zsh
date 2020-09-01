@@ -33,5 +33,7 @@ brew tap homebrew/cask-fonts
 brew cask install font-meslo-lg-nerd-font
 ``
 
-In iTerm2 -> Preferences -> Profiles -> Text -> Font, select `Meslo LGL Nerd Font`
+In iTerm2 -> Preferences -> Profiles -> Text -> Font, select `Meslo LGL Nerd Font` for `Font`
+
+To change the terminal theme, navigate to iTerm2 -> Preferences -> Profiles -> Colors. Under `Color Presets`, select `import`, and navigate to and select `OneDark.itermcolors`
 
