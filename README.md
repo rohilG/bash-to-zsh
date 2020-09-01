@@ -3,6 +3,7 @@ Integrating to zsh and using tmux
 
 Place all files individually under `~/.` For example, your path for `.bashrc` should be `~/.bashrc`
 
+
 I use the iterm2 terminal: ```https://iterm2.com/```
 
 Installing homebrew: ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"```
@@ -19,6 +20,18 @@ Install auto-suggestions: ```git clone https://github.com/zsh-users/zsh-autosugg
 
 Install thefuck: ```brew install thefuck```
 
-Autoload for vim: ```curl -fLo '~/.vim/autoload/plug.vim' --create-dirs 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'```
+Autoload for vim: ```curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim```
 
 To install plugins for vim, `vi ~/.vimrc` and `:PlugInstall`
+
+Close iterm and reopen. This will cause .zshrc to be sourced. (Alternatively, one could `source ~/.zshrc`)
+
+To install the font:
+``
+brew tap homebrew/cask-fonts
+brew cask install font-meslo-lg-nerd-font
+``
+
+In iTerm2 -> Preferences -> Profiles -> Text -> Font, select `Meslo LGL Nerd Font`
+
