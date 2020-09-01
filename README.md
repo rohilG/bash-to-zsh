@@ -37,3 +37,9 @@ In iTerm2 -> Preferences -> Profiles -> Text -> Font, select `Meslo LGL Nerd Fon
 
 To change the terminal theme, navigate to iTerm2 -> Preferences -> Profiles -> Colors. Under `Color Presets`, select `import`, and navigate to and select `OneDark.itermcolors`
 
+For tmux: ```brew install tmux```
+
+Tmux package manager: ```git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm```
+
+
+
