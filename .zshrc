@@ -1,4 +1,4 @@
-#######################################################################################
+#################################################################################
 POWERLEVEL9K_MODE="nerdfont-complete"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -55,7 +55,6 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting # This should be the last one
 )
-#######################################################################################
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -76,8 +75,15 @@ export FZF_DEFAULT_OPTS='--height 40% --inline-info --reverse'
 # Helps with error correction on slightly misspelled commands
 eval $(thefuck --alias)
 
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+
+# pyenv manages python versions && environments
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
