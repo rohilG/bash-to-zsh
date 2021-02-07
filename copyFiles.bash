@@ -3,8 +3,8 @@
 cp ~/bash_profile .
 cp ~/.bashrc .
 cp ~/.tmux.conf .
-cp ~/.vimrc
+cp ~/.vimrc .
 cp ~/.zshrc .
-cp -r ~/.vim .
-echo "Copied all relevant (dot) files and folders over!"
+rsync -avr --exclude='*/.git' ~/.vim/ .
+echo "Copied all relevant (dot) files and folders over"
 
