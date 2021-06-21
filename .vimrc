@@ -44,16 +44,16 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Ctrl-p searches for all files within a directory (like VSCode's mapping)
-nmap <silent> <C-P> :Files<CR>
+nmap <C-P> :Files<CR>
 
 " Gives modal preview on a Ctrl-F
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4"
 
-# Don't search within certain folders
+"  Don't search within certain folders
 let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
 
-# Ensures ripgrep (rg) results show in modal
+" Ensures ripgrep (rg) results show in modal
 command! -bang -nargs=? -complete=dir Files
      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 " set rtp+=/usr/local/opt/fzf
@@ -191,3 +191,6 @@ set visualbell
 
 " Allows backspace in insert mode
 set backspace=indent,eol,start
+
+" Map :W command to execute like :w
+command W w
