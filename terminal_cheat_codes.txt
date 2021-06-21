@@ -1,0 +1,2 @@
+To search in current directory: ctrl-T
+To search command history: ctrl-R

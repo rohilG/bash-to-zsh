@@ -36,13 +36,28 @@ let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'lint
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-
-
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 "Plug 'fatih/vim-go', { 'tag': '*' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Ctrl-p searches for all files within a directory (like VSCode's mapping)
+nmap <silent> <C-P> :Files<CR>
+
+" Gives modal preview on a Ctrl-F
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4"
+
+# Don't search within certain folders
+let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
+
+# Ensures ripgrep (rg) results show in modal
+command! -bang -nargs=? -complete=dir Files
+     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" set rtp+=/usr/local/opt/fzf
+
 
 "Lightline
 Plug 'itchyny/lightline.vim'
@@ -134,10 +149,10 @@ let g:onedark_hide_endofbuffer = 1
 " Plug 'roxma/vim-paste-easy'
 
 " Ctrl-p in Vim allows for fuzzy file-finding
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 " Don't have to specify opening directory
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_log = 1
+"let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_log = 1
 
 
 " If a file is already open, open the current one in a new buffer
@@ -148,6 +163,7 @@ call plug#end()
 
 " cool syntax highlighting 
 syntax on
+set termguicolors
 colorscheme onedark
 
 " i forget what this does but i dont want to remove it 
