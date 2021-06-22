@@ -43,8 +43,11 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Ctrl-p searches for all files within a directory (like VSCode's mapping)
+" Ctrl-p searches for all files within a directory (similiar to VSCode's mapping)
 nmap <C-P> :Files<CR>
+
+" Ctrp-f searches for a string within a directory 
+nmap <C-F> :Rg<CR>
 
 " Gives modal preview on a Ctrl-F
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
@@ -56,18 +59,27 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_mo
 " Ensures ripgrep (rg) results show in modal
 command! -bang -nargs=? -complete=dir Files
      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-" set rtp+=/usr/local/opt/fzf
 
 
 "Lightline
 Plug 'itchyny/lightline.vim'
 
+
 "NERDTree
 Plug 'scrooloose/nerdtree'
 
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Reveal file in tree
+nnoremap ,f :NERDTreeFind<CR>
+
+" Toggle nerd tree on and off
+nnoremap ,t :NERDTreeToggle<CR>
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Exit Vim if NERDTree is the only window left.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
