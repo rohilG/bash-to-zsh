@@ -70,10 +70,7 @@ source ~/.bash_profile
 
 # Sources fuzzy finder for zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height 40% --inline-info --reverse'
-
-# Helps with error correction on slightly misspelled commands
-eval $(thefuck --alias)
+export FZF_DEFAULT_OPTS='--height 40% --inline-info --reverse --extended'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
@@ -85,5 +82,5 @@ export PATH=$PATH:$GOPATH/bin
 
 # pyenv manages python versions && environments
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi

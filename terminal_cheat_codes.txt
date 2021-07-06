@@ -1,0 +1,10 @@
+Terminal:
+- ~/.tmux.conf for splitting panes and tabs
+- To search in current directory: ctrl-T
+- To search command history: ctrl-R
+
+
+Vim:
+- Toggle nerd tree on/off: ,t
+- Reveal file in tree: ,f
+
